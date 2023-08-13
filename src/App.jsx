@@ -1,19 +1,18 @@
-import CommentDisplay from './components/CommentDisplay';
 import CommentForm from './components/CommentForm';
-import CommentList from './components/CommentsList';
-import ReplyDisplay from './components/ReplyDisplay';
+import CommentsList from './components/CommentsList';
+import data from '../data.json'
 
 const App = () => {
+  const comments = data.comments;
+  const currentUser = data.currentUser;
+  
   return (
     <div className="font-rubik bg-lightGray w-full text-sm md:text-md">
       <div className='md:max-w-2xl md:mx-auto flex flex-col min-h-screen mx-2 sm:py-2'>
         <main className="flex-grow">
-          <CommentDisplay />
-          <CommentDisplay />
-          <ReplyDisplay />
-          <ReplyDisplay />
+          <CommentsList comments={comments}/>
         </main>
-        <CommentForm />
+        <CommentForm currentUser={currentUser} />
       </div>
     </div>
   );

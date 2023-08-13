@@ -1,4 +1,3 @@
-// import { useState } from 'react';
 import Panel from './Panel';
 
 export default function Form({ image, setText, text, buttonText, ...rest }) {

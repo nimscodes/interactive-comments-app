@@ -1,13 +1,12 @@
 import { useState } from 'react';
-import juliusomo from '../images/avatars/image-juliusomo.png';
 import Form from './Form';
 
-export default function CommentForm() {
+export default function CommentForm({ currentUser }) {
   const [comment, setComment] = useState('');
 
   return (
     <Form
-      image={juliusomo}
+      image={currentUser.image.png}
       text={comment}
       setText={setComment}
       buttonText="SEND"
